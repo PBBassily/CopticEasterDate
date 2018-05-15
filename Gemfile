@@ -10,6 +10,7 @@ group :development, :test do
 end
 
 group :production do
+    gem 'rails_12factor'
         gem 'pg'
 end
 # Use Puma as the app server
