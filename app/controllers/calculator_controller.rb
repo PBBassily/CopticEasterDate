@@ -3,7 +3,7 @@ class CalculatorController < ApplicationController
   end
 
   def new
-    @result = Calculator.send(params[:operation], *[params[:a], params[:b]])
+    @result = Calculator.send(:calculate, *[params[:year]])
     render :index
   end
 end

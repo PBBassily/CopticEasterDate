@@ -1,21 +1,19 @@
 <h2>Auto-Deployment is for those who dare</h2>
 <html>
-<body>
+<body align = "center" class = "body">
     <header>
         <h1>ميعاد عيد القيامة</h1>
+        <h4> ادخل السنة<h4>
     </header>
-    السنة
-    <input type="number" min="1900" max="2099" step="1" value="2016">
-</body>
+
 
 <%= form_for :calculator, url: "new", method: :get  do |f|   %>
-  <%= number_field_tag :a, params[:a] %>
-  <%= select_tag :operation, options_for_select([['+', :sum], ['-',    :subtr]], params[:operation]) %>
-  <%= number_field_tag :b, params[:b] %>
-  <%= f.submit 'Calculate!' %>
+  <%= number_field_tag :year, params[:year], in: 1...2999%>
+  <%= f.submit 'OK' %>
 <% end %>
 
 <% unless @result.nil? %>
-  <p> = <%= @result %> </p>
+  <p>  <%= @result %> </p>
 <% end %>
+</body>
 </html>
